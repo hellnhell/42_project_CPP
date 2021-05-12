@@ -6,75 +6,114 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 10:32:59 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/11 14:40:11 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/12 14:53:51 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+
 #include "contact.hpp"
-void	search(Contact *book, int count)
+
+void	info_contact(Contact *contacts, int i)
 {
-	if (count > 0)
-	{
-		std::cout << book->_firstName  << " is your 1st contact" << std::endl;
-		std::cout << book->_lastname  << " is your 1st contact" << std::endl;
-		std::cout << book->_nickname  << " is your 1st contact" << std::endl;
-		std::cout << book->_login  << " is your 1st contact" << std::endl;
-		std::cout << book->_address  << " is your 1st contact" << std::endl;
-		std::cout << book->_email  << " is your 1st contact" << std::endl;
-		std::cout << book->_phone  << " is your 1st contact" << std::endl;
-		std::cout << book->_birthday  << " is your 1st contact" << std::endl;
-		std::cout << book->_meal  << " is your 1st contact" << std::endl;
-		std::cout << book->_underwear  << " is your 1st contact" << std::endl;
-		std::cout << book->_secret  << " is your 1st contact" << std::endl;
-		std::cout << "You can ADD a new contact or EXIT" << std::endl;
-	}
-	else
-		std::cout << "No contacts in your PhoneBook. ADD new contacts" << std::endl;
+		std::cout << contacts[i]._firstName  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._lastName  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._nickName  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._login  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._address  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._email  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._phone  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._birthday  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._meal  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._underwear  << " is your 1st contact" << std::endl;
+		std::cout << contacts[i]._secret  << " is your 1st contact" << std::endl;
 }
 
-void	add_contacts(Contact *book, int count)
+std::string	columns(std::string str)
+{	
+	if (str.length() > 10)
+	{
+		str.resize(9);
+		str.append(".");
+	}
+	return(str);
+}
+
+void	search_contacts(Contact *contacts, int i)
+{
+	std::string index;
+	std::string n_contc;
+	if (i > 0)
+	{
+		std::cout << "------------------- YOUR PHONE BOOK -------------------" << std::endl;
+		for (int count = 0; count < i; count++)
+		{
+			std::cout << "| " << std::setw(10) << count + 1;
+			std::cout << " | " << std::setw(10) << columns(contacts[count]._firstName);
+			std::cout << " | " << std::setw(10) << columns(contacts[count]._lastName);
+			std::cout << " | " << std::setw(10) << columns(contacts[count]._nickName);
+			std::cout << " |" << std::endl;
+		}
+		std::cout << "-------------------------------------------------------" << std::endl;
+		std::cout << "Select de index for complete info" << std::endl;
+		getline(std::cin, index);
+		n_contc = std::to_string(i);
+		if (index == n_contc)
+			info_contact(contacts, (i + 1));
+	}
+	else
+		std::cout << "No contacts in your PhoneBook. ADD new contacts" << std::endl;	
+}
+
+void	add_contacts(Contact *contacts, int i)
 {
 	std::cout << "Enter your name" << std::endl;
-	book->setFirstName(book->get());
+	contacts[i].setFirstName(contacts[i].get());
 	std::cout << "Enter your last name" << std::endl;
-	book->setLastName(book->get());
+	contacts[i].setLastName(contacts[i].get());
 	std::cout << "Enter your nickname" << std::endl;
-	book->setNickName(book->get());
+	contacts[i].setNickName(contacts[i].get());
 	std::cout << "Enter yout login" << std::endl;
-	book->setLogin(book->get());
+	contacts[i].setLogin(contacts[i].get());
 	std::cout << "Enter your postal address" << std::endl;
-	book->setAddress(book->get());
+	contacts[i].setAddress(contacts[i].get());
 	std::cout << "Enter your email" << std::endl;
-	book->setEmail(book->get());
+	contacts[i].setEmail(contacts[i].get());
 	std::cout << "Enter your phone number" << std::endl;
-	book->setPhone(book->get());
+	contacts[i].setPhone(contacts[i].get());
 	std::cout << "Enter your birthday" << std::endl;
-	book->setBirthday(book->get());
+	contacts[i].setBirthday(contacts[i].get());
 	std::cout << "Enter your favorite meal" << std::endl;
-	book->setMeal(book->get());
+	contacts[i].setMeal(contacts[i].get());
 	std::cout << "Enter your underwear color" << std::endl;
-	book->setUnderwear(book->get());
+	contacts[i].setUnderwear(contacts[i].get());
 	std::cout << "Enter your darkest secret" << std::endl;
-	book->setSecret(book->get());
+	contacts[i].setSecret(contacts[i].get());
 	std::cout << "Contact info saved. Now you can choose an other option" << std::endl;
 }
 
 int	main(){
-	Contact *book;
+	Contact *contacts;
 	std::string	str;
 	int	i;
 	
 	i = 0;
-	book = new Contact[8];
+	contacts = new Contact[8];
 	std::cout << "What do you want to do: ADD , SEARCH or EXIT?" << std::endl;
 	while(1)
 	{
 		getline(std::cin, str);
 		if (str == "SEARCH")
-			search(book, i);
+			search_contacts(contacts, i);
 		else if (str == "ADD")
-			add_contacts(book, i++);		
+		{
+			std::cout << "New Contact:" << std::endl;
+			if (i <= 8)
+				add_contacts(contacts, i++);
+			else
+				std::cout << "You have too many contacts in the list" << std::endl;	
+		}
 		else if (str == "EXIT")
 			break ;
 		else

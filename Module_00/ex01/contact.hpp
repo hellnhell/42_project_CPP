@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 10:36:52 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/11 14:13:53 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/12 12:30:31 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 	std::string get();
 	
 	std::string	_firstName;
-	std::string	_lastname;
-	std::string	_nickname;
+	std::string	_lastName;
+	std::string	_nickName;
 	std::string	_login;
 	std::string	_address;
 	std::string	_email;
@@ -44,6 +44,7 @@ public:
 	std::string	_meal;
 	std::string	_underwear;
 	std::string	_secret;
+	
 };
 
 void	Contact::setFirstName(std::string str)
@@ -53,12 +54,12 @@ void	Contact::setFirstName(std::string str)
 
 void		Contact::setLastName(std::string str)
 {
-	_lastname = str;
+	_lastName = str;
 }
 
 void		Contact::setNickName(std::string str)
 {
-	_nickname = str;
+	_nickName = str;
 }
 
 void		Contact::setLogin(std::string str)
@@ -108,21 +109,6 @@ std::string Contact::get()
 	getline(std::cin, str);                               
 	return (str);
 }
+
+
 #endif
-// public:
-
-
-// 	std::string getFirstName(void);
-// 	std::string getLastName(void);
-// 	std::string getNickName(void);
-// 	std::string getLogin(void);
-// 	std::string getAddress(void);
-// 	std::string getEmail(void);
-// 	std::string getPhone(void);
-// 	std::string getBirthday(void);
-// 	std::string getMeal(void);
-// 	std::string getUnderware(void);
-// 	std::string getSecret(void);
-
-
-// }
