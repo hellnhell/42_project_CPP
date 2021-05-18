@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:20:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/14 16:25:09 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/18 16:35:26 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@
 
 class Zombie
 {
-private:
-	std::string	type;
-	std::string name;
-	
 public:
-	void	announce()
-	{
-		std::cout << name << type << " Braiiiiiiiiiinnnnnsss";
-	};
+		Zombie();
+		Zombie(std::string name, std::string type);
+		~Zombie();
+		void	setZombie(std::string name, std::string type);
+		void	announce();
+		
+private:
+		std::string	_type;
+		std::string _name;
 	
 };
-
 #endif
+
