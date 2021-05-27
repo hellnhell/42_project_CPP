@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:46:16 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/20 14:00:42 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:52:35 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
+//define the life of a variable inside a function
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);

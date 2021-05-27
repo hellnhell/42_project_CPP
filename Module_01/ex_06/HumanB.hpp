@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:46:08 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/20 13:23:52 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:24:26 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class	HumanB
 {
 	private:
-			Weapon	 *_weapon;
-			std::string _name;
+			Weapon const	 *_weapon;
+			std::string 	_name;
 	public:
 			HumanB(std::string const &name);
 			~HumanB();
@@ -27,18 +27,5 @@ class	HumanB
 			void	setWeapon(const Weapon &weapon);
 };
 
-HumanB::HumanB(std::string const &name)
-{
-	this->_name = name;
-}
 
-void	HumanB::attack()
-{
-	std::cout << this->_name << "has a " << this->_weapon->getType() << " weapon" << std::endl;
-}
-
-void HumanB::setWeapon(const Weapon &weapon)
-{
-	this->_weapon = &weapon;
-}
 #endif
