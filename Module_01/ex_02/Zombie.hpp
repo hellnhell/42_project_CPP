@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:20:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/18 16:35:26 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/19 13:32:45 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 		Zombie(std::string name, std::string type);
 		~Zombie();
 		void	setZombie(std::string name, std::string type);
+		void	scream();
 		void	announce();
 		
 private:

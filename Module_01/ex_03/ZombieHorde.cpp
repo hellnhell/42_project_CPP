@@ -6,13 +6,13 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 11:18:52 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/19 13:43:34 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/31 11:38:11 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
 
-std::string ZombieHorde::_list[9] = {"Henry", "Pablo", "Francis", "Alicee", "Joseph", "Mark", "Damien", "Paul", "George"};
+std::string ZombieHorde::_list[] = {"Chantal", "Marina", "Henry", "Pablo", "Francis", "Alicee", "Joseph", "Mark", "Damien", "Paul", "George"};
 
 ZombieHorde::ZombieHorde(int n)
 {

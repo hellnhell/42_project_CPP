@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 12:45:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/24 14:14:10 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/31 10:36:34 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,26 @@ Replace::Replace(std::string fileName, std::string s1, std::string s2) : _fileNa
 
 Replace::~Replace()
 {
+}
+
+int	Replace::check()
+{
+	if (this->_fileName.length() == 0)
+	{
+		std::cout << " Error: Empty Filename" << std::endl;
+		return (1);
+	}
+	if (this->_s1.length() == 0)
+	{
+		std::cout << " Error: Empty Filename" << std::endl;
+		return (1);
+	}
+	if (this->_s2.length() == 0)
+	{
+		std::cout << " Error: Empty Filename" << std::endl;
+		return (1);
+	}
+	return (0);
 }
 
 std::string	Replace::rLine(std::string line)
@@ -51,14 +71,27 @@ void	Replace::rFile()
 	std::ofstream	op;
 	std::string		line;
 	
-	file.open(this->_fileName);
-	op.open(this->_fileName + ".replace");
-	while (std::getline(file, line))
-	{
-		op << Replace::rLine(line);
-		if (!file.eof())
-				op << '\n';
+	if (!(Replace::check()))
+	{			
+		file.open(this->_fileName);
+		if (file.fail())
+		{
+			std::cout << " Error: Couldn't open file. " << std::endl;
+			return;
+		}
+		op.open(this->_fileName + ".replace");
+		if (op.fail())
+		{
+			std::cout << " Error: Couldn't open replace-file. " << std::endl;
+			return;
+		}
+		while (std::getline(file, line))
+		{
+			op << Replace::rLine(line);
+			if (!file.eof())
+					op << '\n';
+		}
+		file.close();
+		op.close();
 	}
-	file.close();
-	op.close();
 }

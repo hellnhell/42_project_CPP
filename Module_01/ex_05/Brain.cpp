@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 14:13:17 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/20 12:40:43 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/26 12:10:48 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 Brain::Brain()
 {
-	this->stupidity = 10;
+	this->_stupidity = 10;
 }
 
 Brain::~Brain()
-{
-}
-
-int	Brain::getStupidity() const
-{
-	return(this->stupidity);
-}
+{}
 
 std::string Brain::identify() const
 {

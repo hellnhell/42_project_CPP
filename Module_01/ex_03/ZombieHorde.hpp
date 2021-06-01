@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:25:14 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/19 13:24:51 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/31 11:38:30 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ZombieHorde
 	
 	private:
 			int	_n;
-			static std::string	_list[9];
+			static std::string	_list[];
 			Zombie *_zombie;
 };
 

@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 12:05:13 by emartin-          #+#    #+#             */
-/*   Updated: 2021/05/14 14:10:54 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/05/26 11:54:58 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
 		Pony(std::string color);
 		~Pony(void);
-		void	run(std::string color, Pony *pony);
+		void	changeColor();
 };
 
 #endif

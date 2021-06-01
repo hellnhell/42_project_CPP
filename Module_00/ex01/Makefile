@@ -6,14 +6,14 @@
 #    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/10 10:31:57 by emartin-          #+#    #+#              #
-#    Updated: 2021/05/11 13:02:56 by emartin-         ###   ########.fr        #
+#    Updated: 2021/05/13 13:42:03 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME			= Phone_Book
 
-SRCS			= phonebook.cpp
+SRCS			= phonebook.cpp contact.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= clang++ 
