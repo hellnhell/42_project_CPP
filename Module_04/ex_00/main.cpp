@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 11:29:57 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/02 11:53:01 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/02 13:11:56 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/02 14:15:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "Sorcer.hpp"
+#include "Peon.hpp"
 
-# include <iostream>
-# include <string>
-
-class ClapTrap
+int	main()
 {
-	protected:
-		int	_hp;
-		int _mhp;
-		int _ep;
-		int	_mep;
-		int _level;
-		std::string _name;
-		int _melee;
-		int	_ranged;
-		int _armor;
-		
-	public:
-		ClapTrap();
-		ClapTrap(ClapTrap const &ct2);
-		~ClapTrap();
-		
-		ClapTrap &operator=(ClapTrap const &ct2);
-		
-		std::string getName();
-};
+	Sorcer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
 
-#endif
+	std::cout << robert << jim << joe;
+	
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	return 0;
+}

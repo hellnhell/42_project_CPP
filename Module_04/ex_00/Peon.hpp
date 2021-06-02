@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 11:29:57 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/02 11:53:01 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/02 12:10:20 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/02 14:19:20 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef PEON_HPP
+# define PEON_HPP
 
-# include <iostream>
-# include <string>
+# include "Victim.hpp"
 
-class ClapTrap
+class	Peon : public Victim
 {
-	protected:
-		int	_hp;
-		int _mhp;
-		int _ep;
-		int	_mep;
-		int _level;
-		std::string _name;
-		int _melee;
-		int	_ranged;
-		int _armor;
-		
+	private:
+		Peon(); //The class cant be init without params
+	
 	public:
-		ClapTrap();
-		ClapTrap(ClapTrap const &ct2);
-		~ClapTrap();
+		Peon(std::string name);
+		Peon(Peon const &v2);
+		virtual ~Peon();
+
+		Peon &operator=(Peon &v2);
 		
-		ClapTrap &operator=(ClapTrap const &ct2);
-		
-		std::string getName();
+		void getPolymorphed() const;
 };
 
 #endif

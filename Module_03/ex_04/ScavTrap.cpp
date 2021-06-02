@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:06:59 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 12:37:49 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:47:54 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,8 @@ ScavTrap::ScavTrap(std::string const &name) :  ClapTrap()
 	std::cout << "SC4V-TP <" << this->_name << "> \"Hi Dude im protecting the door!!\"." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &st2) : ClapTrap()
+ScavTrap::ScavTrap(ScavTrap const &st2) : ClapTrap(st2)
 {
-	this->_hp = st2._hp;
-	this->_mhp = st2._mhp;
-	this->_ep = st2._ep;
-	this->_mep = st2._mep;
-	this->_level = st2._level ;
-	this->_name = st2._name;
-	this->_melee = st2._melee;
-	this->_ranged = st2._ranged;
-	this->_armor = st2._armor;
-	
 	std::cout << "SC4V-TP <" << this->_name << "> \"Hi Dude im in copy protecting the door!!\"." << std::endl;
 }
 
@@ -50,13 +40,7 @@ ScavTrap::~ScavTrap()
 ScavTrap &ScavTrap::operator=(ScavTrap const &st2)
 {
 	std::cout << " Assignation opereator called " << std::endl;
-	this->_hp = st2._hp;
-	this->_mhp = st2._mhp;
-	this->_ep = st2._ep;
-	this->_mep = st2._mep;
-	this->_melee = st2._melee;
-	this->_ranged = st2._ranged;
-	this->_armor = st2._armor;
+	ClapTrap::operator=(st2);
 	return (*this);
 }
 

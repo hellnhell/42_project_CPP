@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:12:05 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 13:48:56 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:24:05 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
-#include "SuperTrap.hpp"
+
 
 int	main()
 {

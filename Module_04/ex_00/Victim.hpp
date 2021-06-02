@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 11:29:57 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/02 11:53:01 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/02 12:10:46 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/02 14:18:04 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
 
 # include <iostream>
-# include <string>
+#include <cctype>
 
-class ClapTrap
+class	Victim
 {
 	protected:
-		int	_hp;
-		int _mhp;
-		int _ep;
-		int	_mep;
-		int _level;
-		std::string _name;
-		int _melee;
-		int	_ranged;
-		int _armor;
-		
+		std::string	_name;
+		Victim(); //The class cant be init without params
+	
 	public:
-		ClapTrap();
-		ClapTrap(ClapTrap const &ct2);
-		~ClapTrap();
+		Victim(std::string name);
+		Victim(Victim const &v2);
+		virtual ~Victim();
+
+		Victim &operator=(Victim &v2);
 		
-		ClapTrap &operator=(ClapTrap const &ct2);
-		
-		std::string getName();
+		std::string	const &getName() const;
+		virtual void getPolymorphed() const;
+
 };
+
+std::ostream &operator<<(std::ostream &os, Victim const &victim);
+
+
 
 #endif

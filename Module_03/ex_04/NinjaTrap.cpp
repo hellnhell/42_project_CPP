@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 12:44:05 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 13:57:06 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:45:39 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,17 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap()
 	std::cout << "NINJ4-TP <" << this->_name << "> \"Hi Dude im a ninja!!\"." << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &ft2) : ClapTrap()
+NinjaTrap::NinjaTrap(NinjaTrap const &ft2) : ClapTrap(ft2)
 {
-	this->_hp = ft2._hp;
-	this->_mhp = ft2._mhp;
-	this->_ep = ft2._ep;
-	this->_mep = ft2._mep;
-	this->_level = ft2._level ;
-	this->_name = ft2._name;
-	this->_melee = ft2._melee;
-	this->_ranged = ft2._ranged;
-	this->_armor = ft2._armor;
-	
+	// this->_hp = ft2._hp;
+	// this->_mhp = ft2._mhp;
+	// this->_ep = ft2._ep;
+	// this->_mep = ft2._mep;
+	// this->_level = ft2._level ;
+	// this->_name = ft2._name;
+	// this->_melee = ft2._melee;
+	// this->_ranged = ft2._ranged;
+	// this->_armor = ft2._armor;
 	std::cout << "NINJ4-TP <" << this->_name << "> \"Hi Dude im a ninja in copy!!\"." << std::endl;
 }
 
@@ -59,13 +58,14 @@ NinjaTrap::~NinjaTrap()
 NinjaTrap &NinjaTrap::operator=(NinjaTrap const &ft2)
 {
 	std::cout << " Assignation opereator called " << std::endl;
-	this->_hp = ft2._hp;
-	this->_mhp = ft2._mhp;
-	this->_ep = ft2._ep;
-	this->_mep = ft2._mep;
-	this->_melee = ft2._melee;
-	this->_ranged = ft2._ranged;
-	this->_armor = ft2._armor;
+	// this->_hp = ft2._hp;
+	// this->_mhp = ft2._mhp;
+	// this->_ep = ft2._ep;
+	// this->_mep = ft2._mep;
+	// this->_melee = ft2._melee;
+	// this->_ranged = ft2._ranged;
+	// this->_armor = ft2._armor;
+	ClapTrap::operator=(ft2);
 	return (*this);
 }
 
