@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 13:11:56 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 11:52:55 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/03 11:57:23 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/03 14:17:47 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcer.hpp"
-#include "Peon.hpp"
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
-int	main()
+class	Enemy
 {
-	Sorcer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
+	private:
+		Enemy();
+		
+	protected:
+		int	_hp;
+		std::string _type;
+		
+	public:
+		Enemy(int hp, std::string const &type);
+		Enemy(Enemy const &e2);
+		virtual ~Enemy();
+
+		Enemy &operator=(Enemy const &e2);
+		
+		int	getHP() const;
+		std::string const &getType() const;
+		virtual void takeDamage(int);
+};
 
 
-	std::cout << robert << jim << joe;
-	
-	robert.polymorph(jim);
-	robert.polymorph(joe);
-	return 0;
-}
+
+#endif

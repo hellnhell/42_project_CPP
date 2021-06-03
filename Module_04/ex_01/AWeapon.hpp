@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcer.hpp                                         :+:      :+:    :+:   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 12:09:56 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 11:46:23 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/03 11:56:45 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/03 13:56:34 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCER_HPP
-# define SORCER_HPP
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
 
-# include <iostream>
-# include <cctype>
-# include "Victim.hpp"
-
-
-class	Sorcer
+class	AWeapon
 {
 	private:
+		AWeapon();
+		
+	protected:
 		std::string	_name;
-		std::string	_title;
-		Sorcer(); //The class cant be init without params
-	
+		int			_apcost;
+		int			_damage;
 	public:
-		Sorcer(std::string name, std::string title);
-		Sorcer(Sorcer const &s2);
-		virtual ~Sorcer();
-
-		Sorcer &operator=(Sorcer &s2);
+	
+		AWeapon(std::stirng const &name, int apcost, int damage);
+		AWeapon(AWeapon const &a2);
+		virtual ~AWeapon();
+		
+		AWeapon &operator=(AWeapon const &a2);
+		
 		std::string	const &getName() const;
-		std::string	const &getTitle() const;
-		void polymorph(Victim const &) const;
-
+		int	getAPCost() const;
+		int	getDamage() const;
+		virtual void attack() const = 0;		
 };
 
-std::ostream &operator<<(std::ostream &os, Sorcer const &sorcer);
 
 #endif

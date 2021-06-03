@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 13:11:56 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 11:52:55 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/03 11:56:55 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/03 14:01:00 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcer.hpp"
-#include "Peon.hpp"
+#ifndef PLASMARIFLE_HPP
+# define PLASMARIFLE_HPP
 
-int	main()
+# include "Aweapon.hpp"
+
+class	PlasmaRifle : public AWeapon
 {
-	Sorcer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
+
+	public:
+		PlasmaRifle();
+		PlasmaRifle(PlasmaRifle const &p2);
+		virtual ~PlasmaRifle();
+		
+		PlasmaRifle &operator=(PlasmaRifle const &p2);
+
+		void attack() const;		
+};
 
 
-	std::cout << robert << jim << joe;
-	
-	robert.polymorph(jim);
-	robert.polymorph(joe);
-	return 0;
-}
+#endif
