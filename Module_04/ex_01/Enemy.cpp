@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:57:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 14:15:44 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/04 12:06:30 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@ Enemy::Enemy(Enemy const &e2) : _hp(e2._hp), _type(e2._type)
 {
 }
 
+Enemy::~Enemy()
+{
+}
+
 Enemy	&Enemy::operator=(Enemy const &e2)
 {
-	this->hp = e2._hp;
+	this->_hp = e2._hp;
 	this->_type = e2._type;
 	return(*this);
 }
 
-int	Enemy::getHP()
+int	Enemy::getHP() const
 {
 	return(this->_hp);
 }

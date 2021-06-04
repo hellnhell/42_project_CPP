@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 11:56:55 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/04 12:05:26 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/04 12:41:20 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/04 12:51:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-# define PLASMARIFLE_HPP
+#include "ISquad.hpp"
+#include "ISpaceMarine.hpp"
 
-# include "AWeapon.hpp"
-
-class	PlasmaRifle : public AWeapon
+int main()
 {
-
-	public:
-		PlasmaRifle();
-		PlasmaRifle(PlasmaRifle const &p2);
-		virtual ~PlasmaRifle();
-		
-		PlasmaRifle &operator=(PlasmaRifle const &p2);
-
-		void attack() const;		
-};
-
-
-#endif
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* jim = new AssaultTerminator;
+	ISquad* vlc = new Squad;
+	vlc->push(bob);
+	vlc->push(jim);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+	ISpaceMarine* cur = vlc->getUnit(i);
+	cur->battleCry();
+	cur->rangedAttack();
+	cur->meleeAttack();
+	}
+	delete vlc;
+	return 0;
+}

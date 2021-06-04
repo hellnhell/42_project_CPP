@@ -6,12 +6,14 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:57:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 14:17:47 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/04 10:47:15 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENEMY_HPP
 # define ENEMY_HPP
+
+# include <iostream>
 
 class	Enemy
 {

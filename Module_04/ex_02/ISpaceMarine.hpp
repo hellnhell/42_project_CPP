@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 11:56:55 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/04 12:05:26 by emartin-         ###   ########.fr       */
+/*   Created: 2021/06/04 12:43:12 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/04 12:56:45 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-# define PLASMARIFLE_HPP
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
-# include "AWeapon.hpp"
-
-class	PlasmaRifle : public AWeapon
+class ISpaceMarine
 {
-
 	public:
-		PlasmaRifle();
-		PlasmaRifle(PlasmaRifle const &p2);
-		virtual ~PlasmaRifle();
-		
-		PlasmaRifle &operator=(PlasmaRifle const &p2);
-
-		void attack() const;		
+		virtual ~ISpaceMarine() {}
+		virtual ISpaceMarine* clone() const = 0;
+		virtual void battleCry() const = 0;
+		virtual void rangedAttack() const = 0;
+		virtual void meleeAttack() const = 0;
 };
-
 
 #endif

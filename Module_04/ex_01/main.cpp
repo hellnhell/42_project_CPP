@@ -6,9 +6,17 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:58:07 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/03 14:14:53 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/04 12:14:34 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "AWeapon.hpp"
+#include "Enemy.hpp"
+#include "RadScorpion.hpp"
+#include "PowerFist.hpp"
+#include "PlasmaRifle.hpp"
+#include "Character.hpp"
+#include "SuperMutant.hpp"
 
 int main()
 {
