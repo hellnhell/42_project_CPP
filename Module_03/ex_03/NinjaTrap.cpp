@@ -6,20 +6,11 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 12:44:05 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/08 11:12:48 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:07:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
-
-NinjaTrap::NinjaTrap() : ClapTrap()
-{
-	this->_ep = 120;
-	this->_mep = 120;
-	this->_level = 1;
-	this->_melee = 60;
-	std::cout << "----> 50% NINJ4-TP" << std::endl;
-}
 
 NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap()
 {
@@ -38,7 +29,6 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap()
 
 NinjaTrap::NinjaTrap(NinjaTrap const &ft2) : ClapTrap(ft2)
 {
-
 	std::cout << "NINJ4-TP <" << this->_name << "> \"Hi Dude im a ninja in copy!!\"." << std::endl;
 }
 
@@ -105,6 +95,6 @@ void	NinjaTrap::ninjaShoebox(ScavTrap &target)
 	if (this->_ep <= 0)
 		std::cout << "NINJ4-TP <" << this->_name << "> " <<  " Doesn't have enough energy " << std::endl;	
 	else
-		std::cout << "NINJ4-TP <" << this->_name << "> " << " special attack to  -SC4V-TP  " << target.getName() << "-. (" << this->_melee << " melee damage points) - \"ODOOOOR!\""<<std::endl;		
+		std::cout << "NINJ4-TP <" << this->_name << "> " << " special attack to  -SC4V-TP  " << target.getName() << " -. (" << this->_melee << " melee damage points) - \"ODOOOOR!\""<<std::endl;		
 }
 

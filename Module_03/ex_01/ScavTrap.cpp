@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:06:59 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 11:26:20 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:37:12 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &st2)
 
 void	ScavTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "SC4V-TP <" << this->_name << "> attacks " << target << " at range, causing " << this->_hp << " points of damage!" << std::endl;
+	std::cout << "SC4V-TP <" << this->_name << "> attacks -" << target << "- at range, causing " << this->_hp << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "SC4V-TP <" << this->_name << "> attacks " << target << " at melee, causing " << this->_hp << " points of damage!" << std::endl;
+	std::cout << "SC4V-TP <" << this->_name << "> attacks -" << target << "- at melee, causing " << this->_hp << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
@@ -74,6 +74,6 @@ void	ScavTrap::beRepaired(unsigned int amount)
 void	ScavTrap::challengeNewcomer(std::string const &target)
 {
 	std::string challenge[] = {"Eiiiins!", "Hey sweety!", "Come we r going to take a walk", "Come on baby!", "I like souls like yours, come!"};
-	std::cout << "SC4G-TP <" << this->_name << "> says: <" << challenge[rand() % 5] << "> to <" << target << ">." << std::endl; 
+	std::cout << "SC4G-TP <" << this->_name << "> says \"" << challenge[rand() % 5] << "\" to -" << target << "-." << std::endl; 
 
 }

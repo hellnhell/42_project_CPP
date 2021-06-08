@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:56:22 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/02 11:50:59 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:10:33 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap() : ClapTrap()
 	this->_mhp = 100;
 	this->_ranged = 20;
 	this->_armor = 5;
-	std::cout << "----> 50% FR4G-TP " << std::endl;
+	std::cout << "----> 50% FR4G-TP" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name) : ClapTrap()
@@ -48,19 +48,18 @@ FragTrap::~FragTrap()
 
 FragTrap &FragTrap::operator=(FragTrap const &ft2)
 {
-	std::cout << " Assignation opereator called " << std::endl;
 	ClapTrap::operator=(ft2);
 	return (*this);
 }
 
 void	FragTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP <" << this->_name << "> attacks " << target << " at range, causing " << this->_hp << " points of damage!" << std::endl;
+	std::cout << "FR4G-TP <" << this->_name << "> attacks -" << target << "- at range, causing " << this->_hp << " points of damage!" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP <" << this->_name << "> attacks " << target << " at melee, causing " << this->_hp << " points of damage!" << std::endl;
+	std::cout << "FR4G-TP <" << this->_name << "> attacks -" << target << "- at melee, causing " << this->_hp << " points of damage!" << std::endl;
 }
 
 void	FragTrap::takeDamage(unsigned int amount)
@@ -92,5 +91,5 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (this->_ep <= 0)
 		std::cout << "FR4G-TP <" << this->_name << "> " <<  " Doesn't have enough energy " << std::endl;	
 	else
-		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " " << target << ". Damage points = " << (attack + 1) * 10 << "!!" <<std::endl;		
+		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " -" << target << "-. (Damage points = " << (attack + 1) * 10 << "!)" <<std::endl;		
 }

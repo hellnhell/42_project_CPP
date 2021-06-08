@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 11:07:46 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/08 10:42:14 by emartin-         ###   ########.fr       */
+/*   Created: 2021/05/31 11:56:50 by emartin-          #+#    #+#             */
+/*   Updated: 2021/06/08 11:08:31 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include <iostream>
 # include <string>
 # include "ClapTrap.hpp"
 
-
-class ScavTrap : virtual public ClapTrap
-{
+class FragTrap : virtual public ClapTrap
+{	
 	public:
-		ScavTrap(std::string const &name);
-		ScavTrap(ScavTrap const &st2);
-		~ScavTrap();
+		FragTrap(std::string const &name);
+		FragTrap(FragTrap const &ft2);
+		virtual ~FragTrap();
 
-		ScavTrap &operator=(ScavTrap const &ft2);
-
+		FragTrap &operator=(FragTrap const &ft2);
+		
 		void	rangedAttack(std::string const &target);
 		void	meleeAttack(std::string const &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		void	challengeNewcomer(std::string const & target);
+		void	vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

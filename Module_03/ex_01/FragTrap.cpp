@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:56:22 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 11:27:15 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:40:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (this->_ep <= 0)
 		std::cout << "FR4G-TP <" << this->_name << "> " <<  " Doesn't have enough energy " << std::endl;	
 	else
-		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " " << target << ". Damage points = " << (attack + 1) * 10 << "!!" <<std::endl;		
+		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " " << target << ". (Damage points = " << (attack + 1) * 10 << "!)" <<std::endl;		
 }

@@ -6,21 +6,29 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:56:22 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/08 10:34:15 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:07:16 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name) : _hp(100), _mhp(100), _ep(100), _mep(100),
-	_level(1), _name(name), _melee(30), _ranged(20), _armor(5)
+FragTrap::FragTrap(std::string const &name) : ClapTrap()
 {
-		std::cout << "FR4G-TP <" << this->_name << "> \"Hi Dude im under construction!!\"." << std::endl;
+	this->_hp = 100;
+	this->_mhp = 100;
+	this->_ep = 100;
+	this->_mep = 100;
+	this->_level = 1;
+	this->_name = name;
+	this->_melee = 30;
+	this->_ranged = 20;
+	this->_armor = 5;
+	
+	std::cout << "FR4G-TP <" << this->_name << "> \"Hi Dude im under construction!!\"." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &ft2) : _hp(ft2._hp), _mhp(ft2._mhp), _ep(ft2._ep),
-	_mep(ft2._mep), _level(ft2._level), _name(ft2._name), _melee(ft2._melee), _ranged(ft2._ranged), _armor(ft2._armor)
-{
+FragTrap::FragTrap(FragTrap const &ft2) : ClapTrap(ft2)
+{	
 	std::cout << "FR4G-TP <" << this->_name << "> \"Hi Dude im in copy!!\"." << std::endl;
 }
 
@@ -31,14 +39,7 @@ FragTrap::~FragTrap()
 
 FragTrap &FragTrap::operator=(FragTrap const &ft2)
 {
-	std::cout << " Assignation opereator called " << std::endl;
-	this->_hp = ft2._hp;
-	this->_mhp = ft2._mhp;
-	this->_ep = ft2._ep;
-	this->_mep = ft2._mep;
-	this->_melee = ft2._melee;
-	this->_ranged = ft2._ranged;
-	this->_armor = ft2._armor;
+	ClapTrap::operator=(ft2);
 	return (*this);
 }
 
@@ -79,7 +80,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	this->_ep -= 25;
 	attack = rand() % 5;
 	if (this->_ep <= 0)
-		std::cout << "FR4G-TP <" << this->_name << "> " <<  "Doesn't have enough energy " << std::endl;	
+		std::cout << "FR4G-TP <" << this->_name << "> " <<  " Doesn't have enough energy " << std::endl;	
 	else
-		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " -" << target << "-. Damage points = " << (attack + 1) * 10 << "!!" <<std::endl;		
+		std::cout << "FR4G-TP <" << this->_name << "> " << attacks[attack] << " -" << target << "-. (Damage points = " << (attack + 1) * 10 << "!)" <<std::endl;		
 }

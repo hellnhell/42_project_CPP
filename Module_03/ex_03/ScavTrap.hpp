@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:07:46 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/08 10:42:14 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/01 12:33:49 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+
 	public:
 		ScavTrap(std::string const &name);
 		ScavTrap(ScavTrap const &st2);

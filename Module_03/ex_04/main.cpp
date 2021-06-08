@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:12:05 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/01 13:55:23 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:05:54 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,26 @@ int	main()
 {
 	srand (time(NULL));
 	SuperTrap sup("Yo");
-	FragTrap ft("Gonzalo");
-	ScavTrap st("Javier");
+	FragTrap ft("Javier");
+	ScavTrap st("Gonzalo");
 	NinjaTrap n1("Adri");
 	NinjaTrap n2("Raul");
 	
-	st.challengeNewcomer("Gonzalo");
-	ft.rangedAttack("Javier");
+	st.challengeNewcomer("Javier");
+	ft.rangedAttack("Gonzalo");
 	st.takeDamage(20);
-	ft.meleeAttack("Javier");
+	ft.meleeAttack("Gonzalo");
 	st.takeDamage(30);
 	st.beRepaired(200);
-	st.meleeAttack("Gonzalo");
+	st.meleeAttack("Javier");
 	ft.takeDamage(20);
-	st.rangedAttack("Gonzalo");
+	st.rangedAttack("Javier");
 	ft.takeDamage(15);
 	ft.beRepaired(150);
-	ft.vaulthunter_dot_exe("Javier");
-	ft.vaulthunter_dot_exe("Javier");
-	ft.vaulthunter_dot_exe("Javier");
-	ft.vaulthunter_dot_exe("Javier");
-	ft.vaulthunter_dot_exe("Javier");
+	ft.vaulthunter_dot_exe("Gonzalo");
+	ft.vaulthunter_dot_exe("Gonzalo");
+	ft.vaulthunter_dot_exe("Gonzalo");
+	ft.vaulthunter_dot_exe("Gonzalo");
 
 	n2.rangedAttack("Gonzalo");
 	n2.takeDamage(20);
@@ -51,13 +50,13 @@ int	main()
 	n1.ninjaShoebox(n2);
 
 	std::cout << "Super on" << std::endl;
-	sup.rangedAttack("Gonzalo");
-	sup.meleeAttack("Gonzalo");
-	sup.vaulthunter_dot_exe("Gonzalo");
+	sup.rangedAttack("Javier");
+	sup.meleeAttack("Javier");
+	sup.vaulthunter_dot_exe("Javier");
 	sup.ninjaShoebox(ft);
 	sup.ninjaShoebox(ft);
 	sup.ninjaShoebox(ft);
-	sup.vaulthunter_dot_exe("Gonzalo");
+	sup.vaulthunter_dot_exe("Javier");
 	sup.ninjaShoebox(ft);
 	std::cout << "Super off" << std::endl;
 	return 0;
