@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:09:56 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/04 10:50:06 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:25:03 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SORCER_HPP
 
 # include <iostream>
-c
 # include "Victim.hpp"
 
 
@@ -23,7 +22,7 @@ class	Sorcer
 	private:
 		std::string	_name;
 		std::string	_title;
-		Sorcer(); //The class cant be init without params
+		Sorcer();
 	
 	public:
 		Sorcer(std::string name, std::string title);

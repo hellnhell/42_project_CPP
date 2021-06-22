@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:41:58 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/07 14:13:08 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/22 11:38:47 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Squad	&Squad::operator=(Squad const &s2)
 	}
 	this->_count = 0;
 	for (int i = 0; i < s2.getCount(); i++)
-		this->push(s2.getUnit(i)->clone()); //clonas la unidad
+		this->push(s2.getUnit(i)->clone());
 	return (*this);
 }
 
@@ -52,11 +52,11 @@ int	Squad::getCount() const
 ISpaceMarine *Squad::getUnit(int i) const
 {
 	if (this->_count == 0 || i < 0 || i >= this->_count)
-		return(nullptr); //es un null q se puede convertir a cualquier type. Para compatibilizar con ints
+		return(nullptr);
 	return (this->_marines[i]);
 }
 
- int Squad::push(ISpaceMarine *m1) //devuelve el n de ud q hay y añade la q entra.
+ int Squad::push(ISpaceMarine *m1) 
  {
 	if (!m1)
 		return(this->_count);

@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/21 12:31:31 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:25:16 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main()
 		b1.addGrade();
 		b1.addGrade();
 		std::cout << b1 << std::endl;
-
 	}
 	catch(const std::exception& e)
 	{

@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:58:07 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/04 12:14:34 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/22 11:32:26 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,29 @@ int main()
 	Character* me = new Character("me");
 	std::cout << *me;
 	
-	Enemy* b = new RadScorpion();
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
+	Enemy* mutant = new SuperMutant();
+	Enemy* scorpion = new RadScorpion();
+	AWeapon* plasma = new PlasmaRifle();
+	AWeapon* power = new PowerFist();
 	
-	me->equip(pr);
+	me->equip(power);
 	std::cout << *me;
 	
-	me->equip(pf);
-	me->attack(b);
+	me->equip(power);
+	me->attack(scorpion);
 	std::cout << *me;
 	
-	me->equip(pr);
+	me->equip(plasma);
 	std::cout << *me;
 	
-	me->attack(b);
+	me->attack(mutant);
 	std::cout << *me;
 	
-	me->attack(b);
+	me->attack(scorpion);
 	std::cout << *me;
+	
+	delete (me);
+	delete (plasma);
+	delete (power);
 	return 0;
 }
