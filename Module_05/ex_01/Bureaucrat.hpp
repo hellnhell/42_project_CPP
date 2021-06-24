@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:19 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/21 13:19:26 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:11:26 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	
 	Bureaucrat &operator=(Bureaucrat const &b2);
 	
-	std::string	&getName() const;
+	std::string	getName() const;
 	int			getGrade() const;
 	
 	void	addGrade();

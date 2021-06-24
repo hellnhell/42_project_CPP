@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:05:35 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 11:52:00 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/24 15:56:32 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ private:
 	int			const _gradeSign;
 	int			const _gradeExec;
 
+
+
 	
 public:
 	Form(std::string const &name, int const gradeSign, int const gradeExec);
@@ -42,14 +44,19 @@ public:
 
 
 	void	beSigned(Bureaucrat const &b);
+
+	virtual void execute(Bureaucrat const & executor) const = 0;
 	
-	class	GradeTooHighException: public std::exception{
+		class	GradeTooHighException: public std::exception{
 		virtual const char *what() const throw();
 	};
 	class	GradeTooLowException: public std::exception{
 		virtual const char *what() const throw();
 	};
 	class	AlreadySigned: public std::exception{
+		virtual const char *what() const throw();
+	};
+	class notSigned: public std::exception{
 		virtual const char *what() const throw();
 	};
 	

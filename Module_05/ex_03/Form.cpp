@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:05:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 12:48:21 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/24 16:01:32 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,30 +70,42 @@ void	Form::beSigned(Bureaucrat const &b)
 		
 }
 
-const	char* Form::GradeTooHighException::what() const throw()
+void Form::execute(Bureaucrat const &bureaucrat) const
+{
+	if (bureaucrat.getGrade() > getGradeExec())
+		throw (GradeTooLowException());
+	else if (!getSigned())
+		throw (notSigned());
+}
+
+const char* Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too High.");
 }
 
-const	char* Form::GradeTooLowException::what() const throw()
+const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too Low.");
 }
 
-const	char* Form::AlreadySigned::what() const throw()
+const char* Form::AlreadySigned::what() const throw()
 {
 	return ("Already signed.");
 }
 
+const char *Form::notSigned::what() const throw()
+{
+	return ("Not Signed");
+}
 
 std::ostream &operator<<(std::ostream &os, Form const &b2)
 {
 	
 	if (b2.getSigned())
 		os << "<" << b2.getName() << "> form it's signed, with a sign grade of <"
-		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << std::endl;
+		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << ">" << std::endl;
 	else
 		os << "<" << b2.getName() << "> form it's NOT signed, with a sign grade of <"
-		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << std::endl;
+		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << ">" << std::endl;
 	return (os);
 }

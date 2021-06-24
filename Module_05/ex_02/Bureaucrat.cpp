@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:03 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 12:49:22 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/24 16:00:07 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,15 @@ void	Bureaucrat::signForm(Form &form) const
 	form.beSigned(*this);
 }
 
+void	Bureaucrat::executeForm(Form const &form) const
+{
+	if (!form.getSigned())
+		throw Form::notSigned();
+	else if (form.getGradeExec() < this->_grade)
+		throw Form::GradeTooLowException();
+	else
+		std::cout << *this << "-> executes " << form << std::endl;
+}
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &b2)
 {
