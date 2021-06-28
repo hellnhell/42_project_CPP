@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:58:08 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/10 12:57:18 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 10:51:24 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main()
 	
 	ICharacter* bob = new Character("bob");
 	
-	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(0, *bob);
 	
 	delete bob;
 	delete me;

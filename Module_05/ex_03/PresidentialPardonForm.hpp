@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:55:39 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 17:15:24 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 11:07:07 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class PresidentialPardonForm : public Form
 {
 private:
+	PresidentialPardonForm();
 	std::string			const _target;
-	static std::string	const _tree;
 	
 public:
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(PresidentialPardonForm const &s2);
-	~PresidentialPardonForm();
+	virtual ~PresidentialPardonForm();
 	
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &s2);
 	

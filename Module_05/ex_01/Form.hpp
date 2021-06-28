@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:05:35 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 11:52:00 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 11:10:44 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ private:
 public:
 	Form(std::string const &name, int const gradeSign, int const gradeExec);
 	Form(Form const &f2);
-	~Form();
+	virtual ~Form();
 	
 	Form &operator=(Form const &f2);
 	

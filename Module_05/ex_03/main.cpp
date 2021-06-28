@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 17:29:58 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 12:10:16 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
+
 
 int	main()
 {
@@ -23,9 +25,11 @@ int	main()
 	std::cout << b1 << std::endl;
 	Bureaucrat b2("b2", 150);
 	std::cout << b2 << std::endl;
+	Intern intern;
 
 	std::cout << "---- SHRUBBERY ----" << std::endl << std::endl;
-	Form *shrubbery = new ShrubberyCreationForm("home");
+	Form *shrubbery;
+	shrubbery = intern.makeForm("shrubbery", "home");
 	std::cout << *shrubbery << std::endl;
 	shrubbery->beSigned(b1);
 	shrubbery->execute(b1);
@@ -55,7 +59,8 @@ int	main()
 
 	
 	std::cout << "---- ROBOTOMY ----" << std::endl << std::endl;
-	Form *robot1 = new	RobotomyRequestForm("Your first brain");
+	Form *robot1;
+	robot1 = intern.makeForm("robotomy", "brain");
 	std::cout << *robot1 << std::endl;
 	robot1->beSigned(b1);
 	robot1->execute(b1);
@@ -73,7 +78,8 @@ int	main()
 	std::cout << std::endl << "------" << std::endl;
 
 	std::cout << "---- PRESIDENTIAL ----" << std::endl << std::endl;
-	Form *presi1 = new	PresidentialPardonForm("Pepa");
+	Form *presi1;
+	presi1 = intern.makeForm("presidential", "Pepa");
 	std::cout << *presi1 << std::endl;
 	presi1->beSigned(b1);
 	presi1->execute(b1);
@@ -90,6 +96,6 @@ int	main()
 		std::cerr << e.what() << '\n';
 	}
 	std::cout << std::endl << "------" << std::endl;
-
+	;
 	return 0;
 }

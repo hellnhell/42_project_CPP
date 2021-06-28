@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:19 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/21 12:10:01 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 12:54:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ private:
 public:
 	Bureaucrat(std::string const &name, int grade);
 	Bureaucrat(Bureaucrat const &b2);
-	~Bureaucrat();
+	virtual ~Bureaucrat();
 	
 	Bureaucrat &operator=(Bureaucrat const &b2);
 	
 	std::string	getName() const;
-	int		getGrade() const;
+	int			getGrade() const;
 	
 	void	addGrade();
 	void	subGrade();

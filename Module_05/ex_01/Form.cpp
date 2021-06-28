@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:05:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 12:48:21 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 12:56:22 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ std::ostream &operator<<(std::ostream &os, Form const &b2)
 	
 	if (b2.getSigned())
 		os << "<" << b2.getName() << "> form it's signed, with a sign grade of <"
-		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << std::endl;
+		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << ">" << std::endl;
 	else
 		os << "<" << b2.getName() << "> form it's NOT signed, with a sign grade of <"
-		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << std::endl;
+		<< b2.getGradeSign() << "> and an exec grade of <" << b2.getGradeExec() << ">" << std::endl;
 	return (os);
 }

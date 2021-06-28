@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 17:31:02 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 17:44:04 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/28 11:57:33 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,54 +21,23 @@
 class Intern
 {
 private:
+	Form* new_presi(std::string target);
+    Form* new_robot(std::string target);
+    Form* new_shrub(std::string target);
 
 public:
 	Intern();
 	Intern(Intern const &i);
-	~Intern();
+	virtual ~Intern();
 
 	Intern &operator=(Intern const &i);
 
-	Form *makeForm(std::string const formName, std::string const target);
+	Form *makeForm(std::string const &formName, std::string const &target);
+	typedef Form*(Intern::*InternFPointer)(std::string);
 
 	class InvalidForm: public std::exception {
 		virtual const char *what() const throw();
 	};
 };
-
-Intern::Intern()
-{
-}
-
-Intern::Intern(Intern const &i)
-{
-	(void)i;
-}
-
-Intern::~Intern()
-{
-}
-
-Intern &Intern::operator=(Intern const &i)
-{
-	(void)i;
-	return (*this);
-}
-
-Form *new_shrub(std::string const &target)
-{
-	return(new ShrubberyCreationForm(target));
-}
-
-Form *new_robot(std::string const &target)
-{
-	return(new RobotomyRequestForm(target));
-}
-
-Form *new_presi(std::string const &target)
-{
-	return(new PresidentialPardonForm(target));
-}
-
 
 #endif
