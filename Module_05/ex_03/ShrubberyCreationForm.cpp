@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:54:46 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 15:46:56 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/29 10:41:06 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 	Form::execute(bureaucrat);
 	std::ofstream sfile;
 	sfile.open(std::string(this->_target + "__shrubbery").c_str());
-	sfile << this->_tree << std::endl;
+	sfile << this->_tree << std::endl << std::endl;
 	sfile.close();
 }

@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 17:29:58 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/29 12:13:08 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl << std::endl;
 	}
 	try
 	{
@@ -49,7 +49,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl << "------" << std::endl;
 
@@ -68,7 +68,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl << "------" << std::endl;
 
@@ -87,7 +87,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl << "------" << std::endl;
 

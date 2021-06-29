@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:05:23 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/24 16:01:32 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/29 12:09:58 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	Form::beSigned(Bureaucrat const &b)
 	else if (this->_signd == true)
 		throw (Form::AlreadySigned());
 	else
-		std::cout << "Sign OK" << std::endl;
+		std::cout << "Sign OK" << std::endl  << std::endl;
 	this->_signd = true;
 		
 }

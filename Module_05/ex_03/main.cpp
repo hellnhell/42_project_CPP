@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/28 12:10:16 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/29 10:38:07 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ int	main()
 	presi1->beSigned(b1);
 	presi1->execute(b1);
 
-	Form *presi2 = new PresidentialPardonForm("Pepe");				
 	try
 	{
+		Form *presi2 = new PresidentialPardonForm("Pepe");				
 		std::cout << *presi2 << std::endl;
 		presi2->beSigned(b1);
 		presi2->execute(b1);
@@ -95,7 +95,7 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << std::endl << "------" << std::endl;
-	;
+	std::cout << "------" << std::endl;
+	
 	return 0;
 }

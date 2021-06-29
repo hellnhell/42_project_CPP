@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/21 12:31:31 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/06/29 12:07:31 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main()
 	try
 	{
 		Bureaucrat b2("b2", 151);
-		b2.subGrade();
 		std::cout << b2 << std::endl;
 	}
 	catch(const std::exception& e)
