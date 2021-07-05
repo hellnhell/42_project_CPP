@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 10:50:27 by emartin-          #+#    #+#             */
-/*   Updated: 2021/06/28 13:00:05 by emartin-         ###   ########.fr       */
+/*   Updated: 2021/07/05 11:04:22 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main()
 	std::cout << "THIRD TRY:" << std::endl;
 
 	Form form4("form4", 120, 30);
-	Bureaucrat b2("b2", 125);
+	Bureaucrat b2("b2", 110);
 	try
 	{
 		b2.signForm(form4);

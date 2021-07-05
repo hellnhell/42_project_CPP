@@ -9,7 +9,7 @@
 // 5 cosasRaras
 
 
-int check_type(std::string input, int *decimals)
+int check_type(std::string input)
 {
     int numDots = 0;
     int j = 0;
@@ -28,11 +28,6 @@ int check_type(std::string input, int *decimals)
         {
             if (numDots)
                 return 0;
-            for (j = 0; input[i + j + 1]; j++)
-            {
-                if(std::isdigit(input[i +j + 1]))
-                    *decimals++;
-            }
             numDots++;
         }
         if (input[i] == 'f' && numDots > 0)
@@ -135,8 +130,8 @@ const char *Convers::wrongInput::what() const throw()
 
 Convers::Convers(std::string input): _input(input)
 {
-    this->_intError , this->_floatError, this->_doubleError, this->_decimals = 0;
-    if (!(this->_type = check_type(input, &this->_decimals)))
+	this->_decimals = 0;
+    if (!(this->_type = check_type(input)))
         throw (wrongInput());
     if (this->_decimals == 0)
         this->_decimals = 1;
@@ -180,7 +175,7 @@ Convers::Convers(std::string input): _input(input)
 
         std::cout << "float " << std::endl;
         if(!this->_floatError)
-            std::cout << this->_f << std::endl;
+            std::cout << this->_f << "f" << std::endl;
         else
             std::cout << "Impossible" << std::endl;
 
