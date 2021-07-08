@@ -1,10 +1,18 @@
 #include "iter.hpp"
 
 template <typename t>
-void    add(t &var)
+void    add(t const &var)
 {
-    var += 2;
+    const_cast<t &>(var) += 2;
 }
+
+template< typename T >
+void print(T const  &x )
+{
+    std::cout << x << std::endl;
+    return;
+}
+
 
 int main()
 {
@@ -33,5 +41,13 @@ int main()
 		std::cout << carray[i];
 	std::cout << std::endl;
 
-    return 0;
+    std::cout << "CORRECTION" << std::endl;
+
+	int     tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+	Awesome tab2[5];
+    
+	iter( tab, 5, print );
+	iter( tab2, 5, print );
+
+	return 0;
 }
