@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/12 11:00:06 by emartin-          #+#    #+#             */
+/*   Updated: 2021/07/12 11:02:34 by emartin-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "iter.hpp"
 
 template <typename t>
@@ -12,7 +25,6 @@ void print(T const  &x )
     std::cout << x << std::endl;
     return;
 }
-
 
 int main()
 {
@@ -43,7 +55,7 @@ int main()
 
     std::cout << "CORRECTION" << std::endl;
 
-	int     tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+	int     tab[] = { 0, 1, 2, 3, 4 };
 	Awesome tab2[5];
     
 	iter( tab, 5, print );
